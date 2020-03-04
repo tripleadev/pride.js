@@ -1,14 +1,8 @@
 import * as React from 'react';
 import { HelloText } from './Hello.styles';
 
-export type HelloProps = {
+export interface HelloProps {
   name: String;
-};
+}
 
-export const Hello: React.SFC<HelloProps> = ({ name }) => {
-  return (
-    <div>
-      <HelloText>hello, {name}</HelloText>
-    </div>
-  );
-};
+export const Hello: React.FC<HelloProps> = ({ name }) => <HelloText>hello, {name}</HelloText>;

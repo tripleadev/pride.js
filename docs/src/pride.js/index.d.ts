@@ -1,2 +1,3 @@
 import { Hello } from './components/Hello/Hello';
-export { Hello };
+import { PrideProvider } from './components/PrideProvider/PrideProvider';
+export { Hello, PrideProvider };

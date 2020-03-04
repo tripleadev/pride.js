@@ -1,12 +1,10 @@
 import React from 'react';
-import { Hello } from './pride.js';
-
-console.log(Hello);
+import { Hello, PrideProvider } from './pride.js';
 
 const App = () => (
-  <div>
+  <PrideProvider theme="dark">
     <Hello name="adam" />
-  </div>
+  </PrideProvider>
 );
 
 export default App;

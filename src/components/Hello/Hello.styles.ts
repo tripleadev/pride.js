@@ -11,7 +11,13 @@ export const HelloText = styled.div`
     66% {
       color: blue;
     }
+    100% {
+      color: red;
+    }
   }
 
   animation: rainbow 3s ease-in-out infinite;
+  font-weight: bold;
+  font-size: 3em;
+  color: red;
 `;

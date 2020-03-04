@@ -1,4 +1,6 @@
 import typescript from 'rollup-plugin-typescript2';
+import postcss from 'rollup-plugin-postcss';
+
 import pkg from './package.json';
 
 export default [
@@ -6,6 +8,7 @@ export default [
     input: 'src/index.tsx',
     external: Object.keys(pkg.peerDependencies || {}),
     plugins: [
+      postcss(),
       typescript({
         typescript: require('typescript'),
       }),
