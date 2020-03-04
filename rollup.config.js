@@ -1,30 +1,23 @@
 import typescript from 'rollup-plugin-typescript2';
-import commonjs from 'rollup-plugin-commonjs';
-import external from 'rollup-plugin-peer-deps-external';
-// import postcss from 'rollup-plugin-postcss-modules'
-import postcss from 'rollup-plugin-postcss';
-import resolve from 'rollup-plugin-node-resolve';
-import url from 'rollup-plugin-url';
-import svgr from '@svgr/rollup';
-
 import pkg from './package.json';
 
-export default {
-  input: 'src/index.tsx',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-    },
-    {
-      file: pkg.module,
-      format: 'es',
-    },
-  ],
-  plugins: [
-    typescript({
-      rollupCommonJSResolveHack: true,
-      clean: true,
-    }),
-  ],
-};
+export default [
+  {
+    input: 'src/index.tsx',
+    external: Object.keys(pkg.peerDependencies || {}),
+    plugins: [
+      typescript({
+        typescript: require('typescript'),
+      }),
+    ],
+    output: [
+      { file: pkg.main, format: 'cjs' },
+      { file: pkg.module, format: 'esm' },
+      {
+        file: 'docs/src/pride.js/index.js',
+        format: 'es',
+        banner: '/* eslint-disable */',
+      },
+    ],
+  },
+];

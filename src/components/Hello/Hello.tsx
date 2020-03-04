@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { HelloText } from './Hello.styles';
 
 export type HelloProps = {
   name: String;
@@ -7,7 +8,7 @@ export type HelloProps = {
 export const Hello: React.SFC<HelloProps> = ({ name }) => {
   return (
     <div>
-      <div>hello, {name}</div>
+      <HelloText>hello, {name}</HelloText>
     </div>
   );
 };

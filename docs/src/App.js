@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hello } from 'pride.js';
+import { Hello } from './pride.js';
 
 console.log(Hello);
 
