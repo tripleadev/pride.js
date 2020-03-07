@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Hello } from '../index';
+import { Hello } from '../';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { PrideProvider } from '../components/PrideProvider/PrideProvider';
 
 describe('Hello Component', () => {
   it('is truthy', () => {
@@ -10,7 +11,11 @@ describe('Hello Component', () => {
 
   it('renders given text properly', () => {
     const name = 'adam';
-    const { getByText } = render(<Hello name={name} />);
+    const { getByText } = render(
+      <PrideProvider>
+        <Hello>{name}</Hello>
+      </PrideProvider>,
+    );
     expect(getByText(`hello, ${name}`)).toBeInTheDocument();
   });
 });

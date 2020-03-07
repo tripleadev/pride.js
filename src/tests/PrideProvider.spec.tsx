@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PrideProvider } from '../index';
+import { PrideProvider } from '../';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
