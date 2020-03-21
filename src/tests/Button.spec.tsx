@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Button } from '../components/Button/Button';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
+import { renderWithTheme as render } from './renderWithTheme';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Button', () => {
@@ -15,7 +16,7 @@ describe('Button', () => {
     expect(method).toHaveBeenCalled();
   });
 
-  it('outputs given text', () => {
+  it('renders given text', () => {
     const text = 'Test button';
     const { getByText } = render(<Button>{text}</Button>);
     expect(getByText(text)).toBeInTheDocument();

@@ -14,7 +14,7 @@ export const theme = {
     lightBlue: '#56ccf2',
     purpule: '#9b51e0',
     lightPurpule: '#bb6bd9',
-    black: '#0a0a0a',
+    black: '#000000',
   },
 
   mq: {
@@ -25,33 +25,35 @@ export const theme = {
   },
 };
 
+export interface PrideColors {
+  gray: {
+    1: string;
+    2: string;
+    3: string;
+    4: string;
+    5: string;
+    6: string;
+  };
+  red: string;
+  orange: string;
+  yellow: string;
+  lightGreen: string;
+  green: string;
+  darkGreen: string;
+  lightBlue: string;
+  blue: string;
+  darkBlue: string;
+  purpule: string;
+  lightPurpule: string;
+  black: string;
+}
+
 export interface PrideTheme extends DefaultTheme {
   bg: string;
   fg: string;
   mode: 'dark' | 'light';
 
-  colors: {
-    gray: {
-      1: string;
-      2: string;
-      3: string;
-      4: string;
-      5: string;
-      6: string;
-    };
-    red: string;
-    orange: string;
-    yellow: string;
-    lightGreen: string;
-    green: string;
-    darkGreen: string;
-    lightBlue: string;
-    blue: string;
-    darkBlue: string;
-    purpule: string;
-    lightPurpule: string;
-    black: string;
-  };
+  colors: PrideColors;
 
   mq: {
     mobile: string;

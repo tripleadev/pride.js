@@ -8,7 +8,7 @@ describe('PrideProvider', () => {
     expect(PrideProvider).toBeTruthy();
   });
 
-  it('renders without errors', () => {
+  it('renders children without errors', () => {
     const labelText = 'hello world';
 
     const { getByTestId } = render(

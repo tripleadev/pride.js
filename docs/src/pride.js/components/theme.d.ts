@@ -29,32 +29,33 @@ export declare const theme: {
         large: string;
     };
 };
+export interface PrideColors {
+    gray: {
+        1: string;
+        2: string;
+        3: string;
+        4: string;
+        5: string;
+        6: string;
+    };
+    red: string;
+    orange: string;
+    yellow: string;
+    lightGreen: string;
+    green: string;
+    darkGreen: string;
+    lightBlue: string;
+    blue: string;
+    darkBlue: string;
+    purpule: string;
+    lightPurpule: string;
+    black: string;
+}
 export interface PrideTheme extends DefaultTheme {
     bg: string;
     fg: string;
     mode: 'dark' | 'light';
-    colors: {
-        gray: {
-            1: string;
-            2: string;
-            3: string;
-            4: string;
-            5: string;
-            6: string;
-        };
-        red: string;
-        orange: string;
-        yellow: string;
-        lightGreen: string;
-        green: string;
-        darkGreen: string;
-        lightBlue: string;
-        blue: string;
-        darkBlue: string;
-        purpule: string;
-        lightPurpule: string;
-        black: string;
-    };
+    colors: PrideColors;
     mq: {
         mobile: string;
         small: string;

@@ -27,7 +27,9 @@
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
     "styled-components": "^5.0.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "chroma-js": "^2.1.0",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -58,5 +60,11 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@types/chroma-js": "^2.0.0",
+    "@types/lodash": "^4.14.149",
+    "chroma-js": "^2.1.0",
+    "lodash": "^4.17.15"
+  }
 }
