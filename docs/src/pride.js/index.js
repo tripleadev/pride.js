@@ -2,7 +2,7 @@
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { createElement } from 'react';
 import _ from 'lodash';
-import * as chroma from 'chroma-js';
+import chroma from 'chroma-js';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -47,7 +47,6 @@ function __makeTemplateObject(cooked, raw) {
 
 var HelloText = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  @keyframes rainbow {\n    0% {\n      color: ", ";\n    }\n    33% {\n      color: ", ";\n    }\n    66% {\n      color: ", ";\n    }\n    100% {\n      color: ", ";\n    }\n  }\n\n  animation: rainbow 3s ease-in-out infinite;\n  font-weight: bold;\n  font-size: 3em;\n  color: ", ";\n"], ["\n  @keyframes rainbow {\n    0% {\n      color: ", ";\n    }\n    33% {\n      color: ", ";\n    }\n    66% {\n      color: ", ";\n    }\n    100% {\n      color: ", ";\n    }\n  }\n\n  animation: rainbow 3s ease-in-out infinite;\n  font-weight: bold;\n  font-size: 3em;\n  color: ", ";\n"])), function (props) { return props.theme.colors.red; }, function (props) { return props.theme.colors.blue; }, function (props) { return props.theme.colors.green; }, function (props) { return props.theme.colors.red; }, function (props) { return props.theme.colors.red; });
 var templateObject_1;
-//# sourceMappingURL=Hello.styles.js.map
 
 var Hello = function (_a) {
     var children = _a.children;
@@ -58,7 +57,6 @@ var Hello = function (_a) {
         "hello, ",
         children);
 };
-//# sourceMappingURL=Hello.js.map
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -87,12 +85,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap&subset=latin-ext');\n\n* {\n  box-sizing: border-box;\n}\n";
+var css = "@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap&subset=latin-ext');\r\n\r\n*, *::before, *::after {\r\n  box-sizing: border-box;\r\n}\r\n";
 styleInject(css);
 
 var GlobalStyles = createGlobalStyle(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  body {\n    font-family: 'Montserrat', sans-serif;\n    background-color: ", ";\n    color: ", ";\n    margin: 0;\n    padding: 0;\n  }\n"], ["\n  body {\n    font-family: 'Montserrat', sans-serif;\n    background-color: ", ";\n    color: ", ";\n    margin: 0;\n    padding: 0;\n  }\n"])), function (props) { return props.theme.bg; }, function (props) { return props.theme.fg; });
 var templateObject_1$1;
-//# sourceMappingURL=GlobalStyles.js.map
 
 var theme = {
     colors: {
@@ -108,7 +105,7 @@ var theme = {
         lightBlue: '#56ccf2',
         purpule: '#9b51e0',
         lightPurpule: '#bb6bd9',
-        black: '#000000',
+        black: '#050505',
     },
     mq: {
         mobile: '@media (max-width: 575.98px)',
@@ -117,7 +114,6 @@ var theme = {
         large: '@media (max-width: 1199.98px)',
     },
 };
-//# sourceMappingURL=theme.js.map
 
 var PrideProvider = function (_a) {
     var children = _a.children, _b = _a.theme, mode = _b === void 0 ? 'light' : _b;
@@ -126,9 +122,11 @@ var PrideProvider = function (_a) {
         createElement(GlobalStyles, null),
         children));
 };
-//# sourceMappingURL=PrideProvider.js.map
 
 function getColor(theme, color) {
+    if (color && !_.has(theme.colors, color)) {
+        throw new Error("Given color is not valid. Give name of one of predefined pride.js colors");
+    }
     return color ? _.get(theme.colors, color, theme.colors.gray['1']) : theme.colors.red;
 }
 
@@ -136,7 +134,6 @@ function modifyColor(action, color, amount) {
     // @ts-ignore
     return new chroma(color)[action](amount).hex();
 }
-//# sourceMappingURL=modifyColor.js.map
 
 var PrideButton = styled.button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  display: inline-block;\n  outline: none;\n  padding: 10px 15px;\n  background-color: ", ";\n  border: 2px solid ", ";\n  color: ", ";\n  font-size: 1em;\n  border-radius: 5px;\n  cursor: pointer;\n  margin: 0 5px;\n  transition: background-color 0.3s, border 0.3s, color 0.3s;\n\n  :hover {\n    background-color: ", ";\n    border-color: ", ";\n  }\n"], ["\n  display: inline-block;\n  outline: none;\n  padding: 10px 15px;\n  background-color: ",
     ";\n  border: 2px solid ", ";\n  color: ",
@@ -158,15 +155,12 @@ var PrideButton = styled.button(templateObject_1$2 || (templateObject_1$2 = __ma
     return props.mode === 'contained' && modifyColor('darken', getColor(props.theme, props.color), 0.5);
 });
 var templateObject_1$2;
-//# sourceMappingURL=Button.styles.js.map
 
 var Button = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
     return (createElement(PrideButton, __assign({}, props), children));
 };
-//# sourceMappingURL=Button.js.map
 
 // Components
-//# sourceMappingURL=index.js.map
 
 export { Hello, PrideProvider, Button, theme };

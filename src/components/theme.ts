@@ -14,7 +14,7 @@ export const theme = {
     lightBlue: '#56ccf2',
     purpule: '#9b51e0',
     lightPurpule: '#bb6bd9',
-    black: '#000000',
+    black: '#050505',
   },
 
   mq: {
