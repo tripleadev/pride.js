@@ -15,15 +15,16 @@ describe('Heading', () => {
   });
 
   it('renders suitable heading element', () => {
-    const headings = [
-      render(<Heading size={1}></Heading>),
-      render(<Heading size={2}></Heading>),
-      render(<Heading size={3}></Heading>),
-      render(<Heading size={4}></Heading>),
-      render(<Heading size={5}></Heading>),
-      render(<Heading size={6}></Heading>),
-    ];
+    const { container } = render(
+      <>
+      <Heading size={1}></Heading>
+      <Heading size={3}></Heading>
+      <Heading size={6}></Heading>
+      </>
+    );
 
-    headings.map(({container}, i) => expect(container.querySelector(`h${i+1}`)).toBeInTheDocument());
+    expect(container.querySelector('h1')).toBeInTheDocument();
+    expect(container.querySelector('h3')).toBeInTheDocument();
+    expect(container.querySelector('h6')).toBeInTheDocument();
   });
 });
