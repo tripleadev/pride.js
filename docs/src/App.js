@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hello, PrideProvider, Button } from './pride.js';
+import { Hello, PrideProvider, Button } from 'pride.js';
 import './App.css';
 
 const App = () => (

@@ -24,3 +24,5 @@ yarn-error.log*
 # IDE's
 .idea/
 .vscode/
+
+docs/src/pride.js/
