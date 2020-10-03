@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd lib
 npm install
 npm run build
