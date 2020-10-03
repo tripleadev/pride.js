@@ -13,18 +13,21 @@ npm install --save pride.js
 ## Usage
 
 ```tsx
-import * as React from 'react'
+import * as React from 'react';
 
-import MyComponent from 'pride.js'
+import MyComponent from 'pride.js';
 
 class Example extends React.Component {
-  render () {
-    return (
-      <MyComponent />
-    )
+  render() {
+    return <MyComponent />;
   }
 }
 ```
+
+## Project structure
+
+- `lib` - This is where we store the libraries code
+- `docs` - App containing pride.js's website and docs
 
 ## License
 
