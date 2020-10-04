@@ -15,10 +15,11 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: cd lib
-      - run: npm ci
-      - run: npm run test:unit
-      - run: npm run build
+      - run: |
+          cd lib
+          npm ci
+          npm run test:unit
+          npm run build
 
   publish-gpr:
     needs: build
@@ -29,9 +30,10 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-      - run: cd lib
-      - run: npm ci
-      - run: npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: |
+          cd lib
+          npm ci
+          npm run build
+          npm publish
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
