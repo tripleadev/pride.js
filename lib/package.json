@@ -1,10 +1,10 @@
 {
-  "name": "pride.js",
-  "version": "0.0.1",
+  "name": "@tripleadev/pride.js",
+  "version": "0.0.2",
   "description": "A simple and colorful React component library.",
   "author": "tripleadev",
   "license": "MIT",
-  "repository": "tripleadev/pride.js",
+  "repository": "https://github.com/tripleadev/pride.js",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
