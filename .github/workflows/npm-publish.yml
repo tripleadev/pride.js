@@ -15,22 +15,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - run: cd lib
       - run: npm ci
-      - run: npm test
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - run: npm run test:unit
+      - run: npm run build
 
   publish-gpr:
     needs: build
@@ -41,7 +29,9 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
+      - run: cd lib
       - run: npm ci
+      - run: npm run build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
