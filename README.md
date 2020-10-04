@@ -2,7 +2,7 @@
 
 > A simple and colorful React component library.
 
-[![NPM](https://img.shields.io/npm/v/pride.js.svg)](https://www.npmjs.com/package/@tripleadev/pride.js) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@tripleadev/pride.js.svg)](https://www.npmjs.com/package/@tripleadev/pride.js) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
