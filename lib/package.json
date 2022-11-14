@@ -46,7 +46,7 @@
     "@types/styled-components": "^5.1.3",
     "jest": "^26.4.2",
     "react-dom": "^16.13.1",
-    "react-scripts-ts": "^3.1.0",
+    "react-scripts-ts": "^4.0.8",
     "rollup": "^2.28.2",
     "rollup-plugin-postcss": "^3.1.8",
     "rollup-plugin-ts": "^1.3.0",
